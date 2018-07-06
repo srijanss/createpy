@@ -7,6 +7,14 @@ import click
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+# ENVIRONMENT VARIABLES
+os.environ['README_MD'] = 'example_README.md'
+os.environ['SETUP_PY'] = 'example_setup.py'
+os.environ['LICENSE_TXT'] = 'example_LICENSE.txt'
+os.environ['GITIGNORE'] = '.gitignore'
+os.environ['TRAVIS_YML'] = '.travis.yml'
+os.environ['MAKEFILE'] = 'Makefile'
+
 default_dir = os.path.abspath(os.getcwd())
 project_base_dir = os.sep.join(os.path.abspath(os.path.dirname(__file__)).split(os.sep)[:-1])
 
@@ -33,10 +41,10 @@ def create_project_folder(project):
 def create_test_folder(project):
     os.chdir(project)
     try:
-        os.mkdir('test')
-        create_initpy('test')
+        os.mkdir('tests')
+        create_initpy('tests')
     except FileExistsError:
-        create_initpy('test')
+        create_initpy('tests')
     finally:
         os.chdir(default_dir)
 
@@ -103,22 +111,27 @@ def create(ctx):
         'Please enter your project name',
         default=ctx.obj['project']
     )
+    click.echo(kwargs['project_name'])
     kwargs['description'] = click.prompt(
         'Project Description',
         default=ctx.obj['description']      
     ) 
+    click.echo(kwargs['description'])
     kwargs['long_description'] = click.prompt(
         'Project Detail Description',
         default=ctx.obj['long_description']      
     )
+    click.echo(kwargs['long_description'])
     kwargs['author_name'] = click.prompt(
         'Author Name',
         default=ctx.obj['author']      
     )
+    click.echo(kwargs['author_name'])
     kwargs['author_email'] = click.prompt(
         'Author Email',
         default=ctx.obj['email']      
     )
+    click.echo(kwargs['author_email'])
     kwargs['license'] = click.prompt(
         'License { 0: MIT, 1: Apache 2.0 }',
         default=ctx.obj['license']      
@@ -146,10 +159,4 @@ def create(ctx):
     create_test_folder(kwargs['project_name'])
 
 if __name__ == '__main__':
-    os.environ['README_MD'] = 'example_README.md'
-    os.environ['SETUP_PY'] = 'example_setup.py'
-    os.environ['LICENSE_TXT'] = 'example_LICENSE.txt'
-    os.environ['GITIGNORE'] = '.gitignore'
-    os.environ['TRAVIS_YML'] = '.travis.yml'
-    os.environ['MAKEFILE'] = 'Makefile'
     main()
