@@ -5,6 +5,7 @@ name = "pypi"
 
 [dev-packages]
 ipdb = "*"
+travis-encrypt = "*"
 
 [packages]
 click = "*"
