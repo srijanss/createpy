@@ -1,3 +1,3 @@
-# test_project 
+# createpy 
 
-Test python project.
+Test python project to create folder structure of new python project.
