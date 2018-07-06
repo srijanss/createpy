@@ -1,0 +1,19 @@
+sudo: required
+dist: xenial
+language: python
+python:
+- '3.6.4'
+
+install:
+- make 
+
+script: make test
+
+after_script: cd ~
+
+deploy:
+  provider: pypi
+  user: srijan
+  server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
+  password:
+    secure: kMqa+rnkypCU2aa9fF5v9hL65E39TWL5WnxapnWxEJyO/SpbVoCESJ0GX2X1fvAtFodQBw8aw24T3VDntGLtBmXL8OMbDLKp19b7WEH2VEnU8M4ZIncTTi+azT+MiZIpWERiGQksJOXp72ff4X0W5hZtadCm1TBiQWtYkdxlm0RGQJUS6qsE+C8zG2ztDa0AfQSZ+aS+B7tfbFoAjcDEPpmJ9+SFeyzwVdjuNnk5aSBUnf2j9Ltz9YmnDSqzlHtWaAhhFWBVdnvijBNzVQ5eY1QXCdaKI+ZiQcNOgj4QO55U9a/yFSDX8lMdI2v6t36b3Cp9jLo4M1tMCYzy7Fkccujk6xRtrUQG+yFmGXCwnB/AORs2UMdpwHLKl5LAcAmhu/NPfeub6SJItMwD04y9lMgozlkESdxWpEIS0mX1px5MK41PKd7Ds/K8tf2K59j/MbpcKq+vhwT7OFidjYbouKoVQrpuf/6VU5NsTbaJPn21jkvuJCOQI4Ww86120UNVFzg8Cl4I8cdC6d6VXCGOPTzSeXuJaqe1n+ZL/5CAz7entmyevsRgEwLYnyRWVAAzxtH52N/YX4AGvMrT9pH1/x4jyudiDlBjRVG/LhJO8rIzrhcv6Hti9xdNI6XCJVm/AyIv3yovggqizKX2e/NF0q5QsEu23gOkFqonzeWvr+k=
