@@ -49,7 +49,7 @@ def create_test_folder(project):
         os.chdir(default_dir)
 
 def get_license(index):
-    with open(project_base_dir + os.sep + 'licenses.json', 'r') as f:
+    with open(project_base_dir + os.sep + 'templates/licenses.json', 'r') as f:
         licenselist = f.read()
     if licenselist:
         licenselist = json.loads(licenselist)[index]

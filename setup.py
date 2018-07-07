@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='createpyproject',
-    version='0.0.5',
+    version='0.0.6',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
     description='Test project to use python script for creating barebone python project folder structure',
@@ -24,7 +24,15 @@ setuptools.setup(
     ],
     python_requires=">=2.7, >=3.0",
     data_files=[
-        ('templates')
+        ('templates', [
+            'templates/example_README.md',
+            'templates/example_LICENSE.txt',
+            'templates/example_setup.py',
+            'templates/.gitignore',
+            'templates/.travis.yml',
+            'templates/Makefile',
+            'templates/licenses.json'
+            ])
     ],
     entry_points='''
     [console_scripts]
