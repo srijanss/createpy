@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='createpyproject',
-    version='0.0.3',
+    version='0.0.4',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
     description='Test project to use python script for creating barebone python project folder structure',
@@ -18,6 +18,11 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),
+    install_requires=[
+        'Click',
+        'jinja2',
+    ],
+    python_requires=">=2.7, >=3.0",
     entry_points='''
     [console_scripts]
     createpyproject=createpy.cli:main
