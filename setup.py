@@ -4,7 +4,7 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='createpy',
+    name='createpyproject',
     version='0.0.2',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
