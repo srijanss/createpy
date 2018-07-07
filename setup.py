@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='createpyproject',
-    version='0.0.2',
+    version='0.0.3',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
     description='Test project to use python script for creating barebone python project folder structure',
@@ -20,6 +20,6 @@ setuptools.setup(
     ),
     entry_points='''
     [console_scripts]
-    createpy=createpy:main
+    createpyproject=createpy.cli:main
     '''
 )
