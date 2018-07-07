@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='createpyproject',
-    version='0.0.4',
+    version='0.0.5',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
     description='Test project to use python script for creating barebone python project folder structure',
@@ -23,6 +23,9 @@ setuptools.setup(
         'jinja2',
     ],
     python_requires=">=2.7, >=3.0",
+    data_files=[
+        ('templates')
+    ],
     entry_points='''
     [console_scripts]
     createpyproject=createpy.cli:main
