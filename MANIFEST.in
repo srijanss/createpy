@@ -1,2 +1,2 @@
 # Include templates data
-recursive-include templates *
+recursive-include example_templates *
