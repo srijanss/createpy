@@ -49,7 +49,7 @@ def create_test_folder(project):
         os.chdir(default_dir)
 
 def get_license(index):
-    with open(project_base_dir + os.sep + 'templates/licenses.json', 'r') as f:
+    with open(project_base_dir + os.sep + 'example_templates/licenses.json', 'r') as f:
         licenselist = f.read()
     if licenselist:
         licenselist = json.loads(licenselist)[index]
@@ -60,7 +60,7 @@ def render_file(template_file, **kwargs):
     render template files with given context arguments
     """ 
     env = Environment(
-        loader=FileSystemLoader(project_base_dir + os.sep + 'templates'),
+        loader=FileSystemLoader(project_base_dir + os.sep + 'example_templates'),
         autoescape=select_autoescape(['html', 'xml'])
     )
     template = env.get_template(template_file)
@@ -140,7 +140,7 @@ def create(ctx):
     # Create Project Folder
     create_project_folder(kwargs['project_name'])
     # Create example license file with choosen license
-    with open(project_base_dir + os.sep + 'templates' + os.sep + os.getenv('LICENSE_TXT'), 'w') as f:
+    with open(project_base_dir + os.sep + 'example_templates' + os.sep + os.getenv('LICENSE_TXT'), 'w') as f:
         f.write(get_license(kwargs['license'])['body'])
     # Copy project files
     project_files = (

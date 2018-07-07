@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='createpyproject',
-    version='0.0.6',
+    version='0.0.7',
     author="Srijan Manandhar",
     author_email="srijan.manandhar@gmail.com",
     description='Test project to use python script for creating barebone python project folder structure',
@@ -23,17 +23,18 @@ setuptools.setup(
         'jinja2',
     ],
     python_requires=">=2.7, >=3.0",
-    data_files=[
-        ('templates', [
-            'templates/example_README.md',
-            'templates/example_LICENSE.txt',
-            'templates/example_setup.py',
-            'templates/.gitignore',
-            'templates/.travis.yml',
-            'templates/Makefile',
-            'templates/licenses.json'
-            ])
-    ],
+    package_data={
+        'example_templates': [
+            'example_templates/example_README.md',
+            'example_templates/example_LICENSE.txt',
+            'example_templates/example_setup.py',
+            'example_templates/.gitignore',
+            'example_templates/.travis.yml',
+            'example_templates/Makefile',
+            'example_templates/licenses.json'
+        ]
+    },
+    include_package_data=True,
     entry_points='''
     [console_scripts]
     createpyproject=createpy.cli:main
