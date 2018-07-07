@@ -8,12 +8,12 @@ import click
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 # ENVIRONMENT VARIABLES
-os.environ['README_MD'] = 'example_README.md'
+os.environ['README_MD'] = 'example_README.md.txt'
 os.environ['SETUP_PY'] = 'example_setup.py'
 os.environ['LICENSE_TXT'] = 'example_LICENSE.txt'
-os.environ['GITIGNORE'] = '.gitignore'
-os.environ['TRAVIS_YML'] = '.travis.yml'
-os.environ['MAKEFILE'] = 'Makefile'
+os.environ['GITIGNORE'] = '.gitignore.txt'
+os.environ['TRAVIS_YML'] = '.travis.yml.txt'
+os.environ['MAKEFILE'] = 'Makefile.txt'
 
 default_dir = os.path.abspath(os.getcwd())
 project_base_dir = os.sep.join(os.path.abspath(os.path.dirname(__file__)).split(os.sep)[:-1])
@@ -49,7 +49,7 @@ def create_test_folder(project):
         os.chdir(default_dir)
 
 def get_license(index):
-    with open(project_base_dir + os.sep + 'example_templates/licenses.json', 'r') as f:
+    with open(project_base_dir + os.sep + 'example_templates/licenses.txt', 'r') as f:
         licenselist = f.read()
     if licenselist:
         licenselist = json.loads(licenselist)[index]
@@ -85,6 +85,9 @@ def add_template_to_project(filename, template, project):
         template_filename = filename.split('_')[1] 
     else:
         template_filename = filename
+    # extract txt extension from all files
+    if template_filename.split('.')[-1] != 'py':
+        template_filename = '.'.join(template_filename.split('.')[:-1])
     with open(template_filename, 'w') as f:
         f.write(template)
     os.chdir(default_dir)
