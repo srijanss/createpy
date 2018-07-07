@@ -14,6 +14,6 @@ after_script: cd ~
 deploy:
   provider: pypi
   user: srijan
-  server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
+  # server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
   password:
     secure: CULiYoYDr2Xugd5Zj5gzGA3ODb6B5UTrqiQiwU+qD1auhWaQ7hd1mF3fK2kIxDOdgouw6sRUejahOX0UAFIUd1KCPTjpvf2x8hnThgqdvtLODJHXi8izi9jrmYFOZheg4CyzUkZM1PQ3udDJblEXmSJxI41r75lK/tYtmkiytvGQWKEl/FF/ZUhZcp4NABnUZDAIYB4AGqff824q/q35e8PILoyXWgFl2gw91Av8mx3bSCbKIkGpBYIxX1UFZ0+5YRSbOS4C1AMmSIAyJ/OmSJMxOglMVfNFjDtuM4rgx43GXJYX8e1c9vFAnaU95EhMW971UWwWruuvWDZxC4t2tgiYWgOU28tcCrTSfcSiFoZpPgpc8QrPWQysSQFRWTyJRmT61V2O+UVqtaqZqk8P4cy3ShY6r8Xgg6p4JRW+AF13A2vtZfknbhVVRHv5sUupvGSVjVeXfEuLSmnr4bK0lucvACoaqiNiDG4Rma5XJTIqWQ8u+poiJ2oN296Oz37mky+yszqsBG+qqjntFSxdqT3D2D8xAGLPOfqA/9ATsU3spCCJCAaRaeTyXsQ58sPlt8AGmRi/01jmo6lM6B5qCOxFBSGM/Aup/hvr+hRAI/YZhWYEmOYe83uS1lGa2aoVUTk/XWXr9Fc088G+PHbkRbMBMlmoKhzeThkcgTVaqAU=
